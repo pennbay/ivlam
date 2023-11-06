@@ -1,8 +1,10 @@
-project('f2py_examples', 'fortran',
+project('f2py_examples', 'c',
   version : '0.1',
   meson_version: '>=0.64.0',
   default_options : ['warning_level=2'],
 )
+
+add_languages('fortran')
 
 py_mod = import('python')
 py = py_mod.find_installation(pure: false)
@@ -18,18 +20,21 @@ incdir_f2py = run_command(py,
     check : true
 ).stdout().strip()
 
-fibby_source = custom_target('fibbymodule.c',
+_fibby_source = custom_target('_fibbymodule.c',
   input : ['fib3.f'],  # .f so no F90 wrappers
-  output : ['fibbymodule.c', 'fibby-f2pywrappers.f'],
-  command : [py, '-m', 'numpy.f2py', '@INPUT@', '-m', 'fibby', '--lower']
+  output : ['_fibbymodule.c', '_fibby-f2pywrappers.f'],
+  command : [py, '-m', 'numpy.f2py', '@INPUT@', '-m', '_fibby', '--lower']
 )
 
 inc_np = include_directories(incdir_numpy, incdir_f2py)
 
-py.extension_module('fibby',
-  ['fib3.f', fibby_source],
+py.extension_module('_fibby',
+  ['fib3.f', _fibby_source],
   incdir_f2py / 'fortranobject.c',
   include_directories: inc_np,
   dependencies : py_dep,
-  install : true
+  install : true,
+  subdir: 'pylam'
 )
+
+# py.install_sources(['pylam.py'],subdir: 'pylam')
