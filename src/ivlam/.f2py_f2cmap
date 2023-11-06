@@ -1,1 +1,1 @@
-dict(real=dict(real64='double'), integer=dict(int64='long long'))
+dict(real=dict(real64='double'), integer=dict(int64='long long',int16='short'))

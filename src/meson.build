@@ -42,5 +42,4 @@ py.extension_module('_ivlam',
   install : true,
   subdir: 'pylam'
 )
-
-# py.install_sources(['pylam.py'],subdir: 'pylam')
+py.install_sources(['__init__.py','ivlam.py'],subdir: 'pylam')
