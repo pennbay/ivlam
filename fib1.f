@@ -1,13 +1,10 @@
-C FILE: FIB3.F
+C FILE: FIB1.F
       SUBROUTINE FIB(A,N)
 C
 C     CALCULATE FIRST N FIBONACCI NUMBERS
 C
       INTEGER N
       REAL*8 A(N)
-Cf2py intent(in) n
-Cf2py intent(out) a
-Cf2py depend(n) a
       DO I=1,N
          IF (I.EQ.1) THEN
             A(I) = 0.0D0
@@ -18,4 +15,4 @@ Cf2py depend(n) a
          ENDIF
       ENDDO
       END
-C END FILE FIB3.F
+C END FILE FIB1.F
