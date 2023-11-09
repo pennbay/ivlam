@@ -26,9 +26,6 @@
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"mhutchie.git-graph",
-				"github.copilot",
-				"github.copilot-chat",
-				"zhile-io.cocopilot",
 				"ms-python.python",
 				"ms-python.vscode-pylance",
 				"ms-toolsai.jupyter",

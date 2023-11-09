@@ -21,7 +21,7 @@
 !    
 !----------------------------------------------------------------------------------------------
 ! [1] Russell, Ryan P., "On the Solution to Every Lambert Problem," 
-!        Celestial Mechanics and Dynamical Astronomy, Vol. 131, Article 50, 2019, pp. 1–33, 
+!        Celestial Mechanics and Dynamical Astronomy, Vol. 131, Article 50, 2019, pp. 1-33, 
 !        https://dx.doi.org/10.1007/s10569-019-9927-z 
 !
 ! [2] Russell, Ryan P., "Complete Lambert Solver Including Second-Order Sensitivities," 

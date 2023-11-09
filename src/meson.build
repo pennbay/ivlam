@@ -14,6 +14,7 @@ incdir_f2py = run_command(py,
 
 inc_np = include_directories(incdir_numpy, incdir_f2py)
 
+add_project_arguments('-ffree-line-length-none', language : 'fortran')
 
 _fibby_source = custom_target('_fibbymodule',
   input : ['fib.pyf'],
@@ -30,12 +31,12 @@ py.extension_module('_fibby',
 )
 
 _ivlam_source = custom_target('_ivlammodule',
-  input : ['ivlam/ivLamV2p41.f90'],
-  output : ['_ivlammodule.c', '_ivlam-f2pywrappers.f', '_ivlam-f2pywrappers2.f90'],
-  command : [py, '-m', 'numpy.f2py', '@INPUT@','-m','_ivlam','--f2cmap','ivlam/.f2py_f2cmap', '--build-dir', 'src','--lower']
+  input : ['ivlam.pyf'],
+  output : ['_ivlammodule.c', '_ivlam-f2pywrappers.f'],
+  command : [py, '-m', 'numpy.f2py', '@INPUT@', '--build-dir', 'src','--lower']
 )
 py.extension_module('_ivlam',
-  ['ivlam/ivLamV2p41.f90', _ivlam_source],
+  ['ivlam/ivLamRuntimeV2p41_738416p65617.f90', _ivlam_source],
   incdir_f2py / 'fortranobject.c',
   include_directories: inc_np,
   dependencies : py_dep,
