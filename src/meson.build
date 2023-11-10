@@ -31,9 +31,9 @@ py.extension_module('_fibby',
 )
 
 _ivlam_source = custom_target('_ivlammodule',
-  input : ['ivlam.pyf'],
+  input : ['ivlam.pyf','.f2py_f2cmap'],
   output : ['_ivlammodule.c', '_ivlam-f2pywrappers.f'],
-  command : [py, '-m', 'numpy.f2py', '@INPUT@', '--build-dir', 'src','--lower']
+  command : [py, '-m', 'numpy.f2py', '@INPUT0@', '--f2cmap','@INPUT1@','--build-dir', 'src','--lower']
 )
 py.extension_module('_ivlam',
   ['ivlam/ivLamRuntimeV2p41_738416p65617.f90', _ivlam_source],
@@ -43,4 +43,4 @@ py.extension_module('_ivlam',
   install : true,
   subdir: 'pylam'
 )
-py.install_sources(['__init__.py','ivlam.py'],subdir: 'pylam')
+py.install_sources(['__init__.py','ivlam.py','ivlam/ivLamTree_20210202_160219_i2d8.bin'],subdir: 'pylam')
