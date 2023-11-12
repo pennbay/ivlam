@@ -7,17 +7,13 @@
     },
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": {
-		"ghcr.io/devcontainers/features/node:1": {
-		  "version": "latest"
-		}
-	},
+	// "features": {},
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install --user -r requirements.txt && npm install -g czg",
+	"postCreateCommand": "pip install --user -r requirements.txt",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -28,6 +24,7 @@
 				"mhutchie.git-graph",
 				"ms-python.python",
 				"ms-python.vscode-pylance",
+				"ms-python.black-formatter",
 				"ms-toolsai.jupyter",
 				"fortran-lang.linter-gfortran"
 			]

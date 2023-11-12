@@ -10,4 +10,5 @@ RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.li
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends gfortran ninja-build
 
-RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+USER vscode
+RUN pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
