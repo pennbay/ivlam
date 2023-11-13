@@ -226,7 +226,10 @@ def ntildewithderivs(r1vec, r2vec, tof, direction, ntilde, includesecondorder):
     tof : input float
     direction : input int
     ntilde : input int
-    includesecondorder : input int
+    includesecondorder : input int. 
+    TRUE returns the first and second order partials.  FALSE returns just the first order, and all second order inputs/outputs not touched    
+    below are the partials for the A and B solutions, the variables are appended with 't' to emphasize the results are not the propoer matrices dzdy and tensor d2zdy2 because of the contiguous memory ordering
+    ny=7 and nz=6 are defined in partialparams, but they are hardcoded and will never change.  The user calling routine must define these variables with the correct dimensions. 
 
     Returns
     -------
