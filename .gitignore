@@ -1,2 +1,4 @@
 builddir
+dist
+
 **/*.mod

@@ -1,0 +1,13 @@
+[build-system]
+build-backend = 'mesonpy'
+requires = ['meson-python', 'numpy']
+
+[project]
+name = 'tblam'
+version = '0.1.0'
+description = 'Solvers of twobody Lambert problem'
+# readme = 'README.md'
+requires-python = '>=3.8'
+authors = [
+  {name = 'pennbay', email = 'pennbay@outlook.com'},
+]
