@@ -87,7 +87,7 @@ def singlen(r1vec, r2vec, tof, direction, ntilde, wantbothifmultirev):
     r1vec : input rank-1 array('d') with bounds (3).
     r2vec : input rank-1 array('d') with bounds (3).
     tof : input float.
-    direction : input int. 1 if 0<theta<pi (short-way d=1 in paper), 1 if pi<theta<2pi (long way d=-1 in paper)
+    direction : input int. 1 if 0<theta<pi (short-way d=1 in paper), -1 if pi<theta<2pi (long way d=-1 in paper)
     ntilde : input int. signed number of revs; if negative the short-period solution is returned, if positive the long-period solution is returned; if wantBothIfMultiRev==TRUE, then both solutions are returned regardless of sign (see comment #7892) 
     wantbothifmultirev : input int. Only applicable if |Ntilde|>0.   If wantBothIfMultiRev==TRUE, then return both short-and long-period solutions (see comment #7892), otherwise return only the short- or long-period according to the sign of Ntile
 
@@ -127,6 +127,8 @@ def singlen(r1vec, r2vec, tof, direction, ntilde, wantbothifmultirev):
 
 def thrun(r1vec, r2vec, tof, direction, uptonwant, dimv):
     """
+    v1vec,v2vec,uptonhave,inforeturnstatusn,infohalfrevstatus = ivlam_thrun(r1vec,r2vec,tof,direction,uptonwant,dimv)
+
     This routine provides all solutions including up to min(uptoNwant,NmaxTheory) revolutions,
     where NmaxTheory is the largest possible N for a given tau and TOF
     NOTE: ivLam_initialize() must be called prior so that all the interpolation coefficients are already loaded in memory
@@ -137,7 +139,7 @@ def thrun(r1vec, r2vec, tof, direction, uptonwant, dimv):
     r1vec : input rank-1 array('d') with bounds (3)
     r2vec : input rank-1 array('d') with bounds (3)
     tof : input double
-    direction : input int
+    direction : input int. input int. 1 if 0<theta<pi (short-way d=1 in paper), -1 if pi<theta<2pi (long way d=-1 in paper)
     uptonwant : input int. indicates user wants all solutions from 0 revs thru uptoNwant revs; uptoNwant<=dimV
     dimv : input int.  column dimensions of the output v1vec and v2vec; if ivLam_initialize() was initialized with
                         - saveAllSolutionsUptoN=0, then no limit on dimV (since details of the solutions are not stored in berN)
@@ -146,10 +148,11 @@ def thrun(r1vec, r2vec, tof, direction, uptonwant, dimv):
     Returns
     -------
     v1vec : rank-2 array('d') with bounds (3,1 + 2 * dimv)
-    v2vec : rank-2 array('d') with bounds (3,1 + 2 * dimv). on exit, these are filled with 2*uptoNhave+1 solutions;
-                                                            these vectors are dimensioned by the user prior to entry in the calling routine,
-                                                            a negitive/positive column number indicates the long/short period solution (0-rev just has 1 solution),
-                                                            for example v2vec(1:3,-2) is the long period arrival vel for 2 revs, v1vec(1:3,1) is the short period departure vel for 1 revs.
+    v2vec : rank-2 array('d') with bounds (3,1 + 2 * dimv). 
+            on exit, these are filled with 2*uptoNhave+1 solutions;
+            these vectors are dimensioned by the user prior to entry in the calling routine,
+            a negitive/positive column number indicates the long/short period solution (0-rev just has 1 solution),
+            for example v2vec(1:3,-2) is the long period arrival vel for 2 revs, v1vec(1:3,1) is the short period departure vel for 1 revs.
     uptonhave : int.
                 - on a successful exit this is min(uptoNwant,NmaxTheory).  All 2*uptoNhave+1 solutions are returned in v1vec and v2vec
                 - on unsuccessful exit, uptoNhave is the last value of |N| that the individual call succeeded,
@@ -179,7 +182,7 @@ def zerorev(r1vec, r2vec, tof, direction):
     r1vec : input rank-1 array('d') with bounds (3)
     r2vec : input rank-1 array('d') with bounds (3)
     tof : input float
-    direction : input int
+    direction : input int. input int. 1 if 0<theta<pi (short-way d=1 in paper), -1 if pi<theta<2pi (long way d=-1 in paper)
 
     Returns
     -------
@@ -224,7 +227,7 @@ def ntildewithderivs(r1vec, r2vec, tof, direction, ntilde, includesecondorder):
     r1vec : input rank-1 array('d') with bounds (3)
     r2vec : input rank-1 array('d') with bounds (3)
     tof : input float
-    direction : input int
+    direction : input int. input int. 1 if 0<theta<pi (short-way d=1 in paper), -1 if pi<theta<2pi (long way d=-1 in paper)
     ntilde : input int
     includesecondorder : input int. 
     TRUE returns the first and second order partials.  FALSE returns just the first order, and all second order inputs/outputs not touched    
@@ -259,7 +262,7 @@ def singlenwithderivs(
     r1vec : input rank-1 array('d') with bounds (3)
     r2vec : input rank-1 array('d') with bounds (3)
     tof : input float
-    direction : input int
+    direction : input int. input int. 1 if 0<theta<pi (short-way d=1 in paper), -1 if pi<theta<2pi (long way d=-1 in paper)
     ntilde : input int
     wantbothifmultirev : input int
     includesecondorder : input int. TRUE returns the first and second order partials.  FALSE returns just the first order, and all second order inputs/outputs not touched    

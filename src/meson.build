@@ -14,8 +14,6 @@ incdir_f2py = run_command(py,
 
 inc_np = include_directories(incdir_numpy, incdir_f2py)
 
-
-
 _fibby_source = custom_target('_fibbymodule',
   input : ['fib.pyf'],
   output : ['_fibbymodule.c', '_fibby-f2pywrappers.f'],
