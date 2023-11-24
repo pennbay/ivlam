@@ -3,9 +3,10 @@ build-backend = 'mesonpy'
 requires = ['meson-python', 'numpy']
 
 [project]
-name = 'tblam'
-version = '0.1.1'
+name = 'ivlam'
+version = '0.1.3'
 description = 'Solvers of twobody Lambert problem'
+license = {file = 'LICENSE'}
 # readme = 'README.md'
 requires-python = '>=3.8'
 authors = [

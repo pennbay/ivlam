@@ -1,15 +1,14 @@
-## 打包
+## Build
 ```
 python -m build
 ```
 
-## 分发
+## Distribution
 ```
-twine upload  dist/* --repository-url http://ps-ynao.duckdns.org:8080
+twine upload  dist/*
 ```
 
-## 安装
+## Install
 ```
-pip search tblam -i http://ps-ynao.duckdns.org:8080
-pip install tblam --extra-index-url http://ps-ynao.duckdns.org:8080 --trusted-host ps-ynao.duckdns.org
+pip install ivlam
 ```
