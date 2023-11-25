@@ -1,4 +1,4 @@
-Python Wrapper for ivlam
+# Python Wrapper for ivlam
 
 ## Install
 ```
