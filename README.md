@@ -1,5 +1,7 @@
 # Python Wrapper for ivlam
 
+This is a python wrapper of the Fortran code of Russell's Lambert Solver.
+
 ## Install
 ```
 pip install ivlam
@@ -33,3 +35,12 @@ if(infohalfrevstatus!=0):
 print(v1vec[:,dimensionV-uptonhave:dimensionV+uptonhave+1])
 print(v2vec[:,dimensionV-uptonhave:dimensionV+uptonhave+1])
 ```
+
+## Reference
+ [1] Russell, Ryan P., "On the Solution to Every Lambert Problem," 
+        Celestial Mechanics and Dynamical Astronomy, Vol. 131, Article 50, 2019, pp. 1-33, 
+        https://dx.doi.org/10.1007/s10569-019-9927-z 
+
+ [2] Russell, Ryan P., "Complete Lambert Solver Including Second-Order Sensitivities," 
+        Journal of Guidance, Control, and Dynamics, accepted 2021,
+        https://doi.org/10.2514/1.G006089 
