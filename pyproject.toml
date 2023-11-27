@@ -1,6 +1,6 @@
 [project]
 name = 'ivlam'
-version = '0.1.7'
+version = '0.1.8'
 description = 'A Python wrapper for ivlam'
 license = { text = 'GNU General Public License v3 or later (GPLv3+)' }
 readme = 'README.md'

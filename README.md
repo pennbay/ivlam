@@ -1,3 +1,5 @@
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 # Python Wrapper for ivlam
 
 This is a python wrapper of the Fortran code of Russell's Lambert Solver.
@@ -35,6 +37,10 @@ if(infohalfrevstatus!=0):
 print(v1vec[:,dimensionV-uptonhave:dimensionV+uptonhave+1])
 print(v2vec[:,dimensionV-uptonhave:dimensionV+uptonhave+1])
 ```
+
+## License
+GNU General Public License v3 or later (GPLv3+)
+
 
 ## Reference
  [1] Russell, Ryan P., "On the Solution to Every Lambert Problem," 
