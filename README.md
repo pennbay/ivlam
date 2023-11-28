@@ -1,3 +1,4 @@
+[![pypi](https://img.shields.io/pypi/v/ivlam.svg?logo=python&logoColor=white)](https://pypi.org/project/ivlam/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # Python Wrapper for ivlam
