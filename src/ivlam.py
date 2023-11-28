@@ -194,7 +194,7 @@ def zerorev(r1vec, r2vec, tof, direction):
     return _ivlam.ivlam_zerorev(r1vec, r2vec, tof, direction)
 
 
-def unloaddata(closeprntu):
+def unloaddata(closeprntu=True):
     """
     info = ivlam_unloaddata(closeprntu)
 
