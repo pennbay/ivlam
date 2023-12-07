@@ -1498,7 +1498,7 @@
         integer(kind=iu) i,j
           
         info=0
-        write(prntU,'(5a)')  ' reading ivLam tree coefficient file: ', trim(file)
+        ! write(prntU,'(5a)')  ' reading ivLam tree coefficient file: ', trim(file)
     
         open(unit=100,file=trim(file),iostat=ios,status='old',action='read',form='unformatted')  
         if(ios.ne.0) then
@@ -1588,7 +1588,7 @@
             mrevLimsNudge(2,i)=mRev%lims(2,i)-dellim
         enddo
     
-        write(prntU,*) 'successfully loaded ivLam ceofficient file...'
+        ! write(prntU,*) 'successfully loaded ivLam ceofficient file...'
         if(1==2) then !to print details, really for developers
             write(prntU,'(a100,100i4)') 'ZREV: ncof,ipatches,lookupX,lookupY; MREV: ncof,ipatches,kbotpatches,lookupX,lookupY,lookupZ=',zRev%ncofs,zRev%ipatches,zRev%numberCustomXbins,zRev%numberYbins,mRev%ncofs,mRev%ipatchesM,mRev%kbotNcofs,mRev%numEachDir
             write(prntU,'(a100,100g14.5)') 'max normalized errors on the interpolations for TbyS_MultiRevBottom, k_MultiRev, k_ZeroRev=',mRev%kbotMaxval,mRev%maxval,zRev%maxval  
@@ -5287,7 +5287,7 @@
     
     dataLoaded%storeMultipleSolutionsUpToN=-2
     dataLoaded%notYet=.true.
-    write(prntU,*) 'successfully deallocated the memory from ivLam routines...'
+    ! write(prntU,*) 'successfully deallocated the memory from ivLam routines...'
     
     if(closePrntU) then
         if(prntU.ne.6) close(prntU)
