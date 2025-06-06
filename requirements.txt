@@ -1,5 +1,5 @@
 ipykernel 
-numpy 
+numpy>=2.0
 matplotlib
 meson
 commitizen
